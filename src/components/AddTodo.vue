@@ -8,7 +8,6 @@
 </template>
 
 <script lang="ts">
-import { v4 } from "uuid";
 import Vue from "vue";
 export default Vue.extend({
   name: "AddTodo",
@@ -21,7 +20,6 @@ export default Vue.extend({
     addTodo(e: HTMLFormElement) {
       e.preventDefault();
       const newTodo = {
-        id: v4(),
         title: this.title,
         completed: false,
       };

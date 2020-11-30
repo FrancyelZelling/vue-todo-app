@@ -1,58 +1,18 @@
 <template>
   <div id="app">
     <Header />
-    <AddTodo v-on:add-todo="addTodo" />
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Header from "./layout/Header.vue";
-import Todos from "./components/Todos.vue";
-import AddTodo from "./components/AddTodo.vue";
-
-interface TodoInterface {
-  id: string;
-  title: string;
-  completed: boolean;
-}
 
 export default Vue.extend({
-  name: "App",
+  name: "app",
   components: {
-    Todos,
     Header,
-    AddTodo,
-  },
-  data() {
-    return {
-      todos: [
-        {
-          id: "1",
-          title: "Todo One",
-          completed: false,
-        },
-        {
-          id: "2",
-          title: "Todo Two",
-          completed: true,
-        },
-        {
-          id: "3",
-          title: "Todo Three",
-          completed: false,
-        },
-      ],
-    };
-  },
-  methods: {
-    deleteTodo(id: string) {
-      this.todos = this.todos.filter((todo) => todo.id !== id);
-    },
-    addTodo(newTodo: TodoInterface) {
-      this.todos = [...this.todos, newTodo];
-    },
   },
 });
 </script>

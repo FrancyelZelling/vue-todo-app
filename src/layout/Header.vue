@@ -1,6 +1,10 @@
 <template>
   <header class="header">
     <h1>TodoList</h1>
+    <div id="nav">
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+    </div>
   </header>
 </template>
 
@@ -20,7 +24,13 @@ export default Vue.extend({
 
   a {
     color: #fff;
+    font-size: 0.9rem;
     padding-right: 5px;
+    text-decoration: none;
+    margin: 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 2px 6px;
   }
 }
 </style>
